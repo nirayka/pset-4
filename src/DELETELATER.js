@@ -7,3 +7,10 @@ if (lowerBound < MIN || upperBound < MIN || lowerBound > MAX || upperBound > MAX
 
 let lowerBound = Number(enteredLower);
 let upperBound = Number(enteredUpper);
+
+
+
+
+
+
+ || (!(Number.isInteger(upperBound))) || (!(Number.isInteger(lowerBound)))

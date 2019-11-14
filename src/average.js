@@ -11,7 +11,6 @@ let firstEven;
 while ((upperBound < MIN) || (lowerBound > upperBound) || (lowerBound < MIN) || (lowerBound > MAX) || (upperBound > MAX) || (!(Number.isInteger(upperBound)))
 || (!(Number.isInteger(lowerBound))) || (Number.isNaN(lowerBound)) || (Number.isNaN(upperBound))) {
   lowerBound = Number(readlineSync.question("Lower bound: "));
-  upperBound = Number(readlineSync.question("Upper bound: "));
 }
 
 
@@ -28,12 +27,6 @@ if (lowerBound % 2 === 0) {
 }
 
 
-
-let numberForFormula = [(firstEven + lastEven) / 2] - 1
-let finalDisplay = numberForFormula * (numberForFormula + 1)
+let finalDisplay =
 
 console.log("\n" + finalDisplay + ".\n")
-
-
-/// DOeS NOT WORK WHEN BOUNDS ARE ODD!!!
-// ALSO SAYS NAN ALL THE FRICKING TIMER :SKFSDFJK LK
