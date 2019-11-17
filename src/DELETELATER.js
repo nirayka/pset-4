@@ -1,16 +1,12 @@
-const MIN = Number.MIN_SAFE_INTEGER
-const MAX = Number.MAX_SAFE_INTEG
+const readlineSync = require("readline-sync");
+let lastDigit
 
-if (lowerBound < MIN || upperBound < MIN || lowerBound > MAX || upperBound > MAX || Number.isNaN(lowerBound) || Number.isNan(upperBound)) {
-  console.log()
-}
+enteredNumber = Number(readlineSync.question("\nPositive integer: "));
 
-let lowerBound = Number(enteredLower);
-let upperBound = Number(enteredUpper);
+lastDigit = enteredNumber % 10
 
 
 
+let finalDisplay = lastDigit
 
-
-
- || (!(Number.isInteger(upperBound))) || (!(Number.isInteger(lowerBound)))
+console.log("\n" + finalDisplay + ".\n")

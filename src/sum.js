@@ -18,22 +18,18 @@ while ((upperBound < MIN) || (lowerBound > upperBound) || (lowerBound < MIN) || 
 if (upperBound % 2 === 0) {
   lastEven = upperBound
 } else {
-  lastEven = --upperBound
+  lastEven = upperBound - 1
 }
 
 if (lowerBound % 2 === 0) {
   firstEven = lowerBound
 } else {
-  firstEven = ++lowerBound
+  firstEven = lowerBound + 1
 }
 
-
-
-let numberForFormula = [(firstEven + lastEven) / 2] - 1
-let finalDisplay = numberForFormula * (numberForFormula + 1)
+let average = [(firstEven + lastEven) / 2]
+let someNumber = (((lastEven - firstEven) / 2) + 1)
+let final = someNumber * average
+let finalDisplay = final.toLocaleString('en')
 
 console.log("\n" + finalDisplay + ".\n")
-
-
-/// DOeS NOT WORK WHEN BOUNDS ARE ODD!!!
-// ALSO SAYS NAN ALL THE FRICKING TIMER :SKFSDFJK LK
