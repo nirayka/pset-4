@@ -1,7 +1,7 @@
 const readlineSync = require("readline-sync");
 let min = 1
 const MAX = Number.MAX_SAFE_INTEGER
-let number = Number(readlineSync.question("\nPositive integer: "));
+let number = Number(readlineSync.question("\nNon-negative integer: "));
 let lastDigit;
 let reverseNumber;
 
