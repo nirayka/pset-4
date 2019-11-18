@@ -1,5 +1,5 @@
 const readlineSync = require("readline-sync");
-let min = 1
+let min = 0
 const MAX = Number.MAX_SAFE_INTEGER
 let number = Number(readlineSync.question("\nPositive integer: "));
 let lastDigit;
@@ -19,6 +19,14 @@ function revNumber(number) {
   return reverseNumber;
 }
 
-let finalDisplay = ([...revNumber(number)+''].map(n=>+n))
+
 
 console.log("\n" + finalDisplay + ".\n")
+
+
+// UNFINISHED
+
+
+/// https://www.freecodecamp.org/news/the-complete-guide-to-loops-in-javascript-f5e242921d8c/
+
+/// euler tontiem somethign?

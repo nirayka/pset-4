@@ -31,3 +31,30 @@ while (separatedNumber > 0) {
 }
 digits.reverse();
 console.log(digits);
+
+
+
+let finalDisplay = ([...revNumber(number)+''].map(n=>+n))
+
+
+reverseNumber = 0;
+while (number > 0) {
+  reverseNumber = (reverseNumber * 10) + (number % 10);
+  number = Math.floor(number / 10);
+}
+return reverseNumber;
+}
+
+
+
+
+
+
+function isPrime(number) {
+    for(let i = 2; i < number; i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+    return value > 1;
+}
