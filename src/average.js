@@ -4,15 +4,27 @@ const MAX = Number.MAX_SAFE_INTEGER
 
 let count = 0;
 let sum = 0;
-let number = Number(readlineSync.question("\nNon-negative integer: "));
+//let number = Number(readlineSync.question("\nNon-negative integer: "));
+let number = 0;
 let average;
 
-while ((number > 0) && (Number.isInteger(number)))  {
+console.log("");
+while (number >= 0) {
+  number = Number(readlineSync.question("Non-negative integer: "));
+  if (number >= 0 && Number.isInteger(number) && number <= MAX && !Number.isNaN(number)) {
+    sum = sum + number;
     count++;
-    sum += number;
-    average = sum / count;
-    number = Number(readlineSync.question("Non-negative integer: "));
+  } else if (number < 0 && Number.isInteger(number) && number >= MIN) {
+      number = number;
+  } else {
+    number = 0;
+  }
+
 }
+
+
+average = sum / count;
+
 
 let roundedAverage = average.toFixed(3)
 let finalDisplay = average.toLocaleString('en')

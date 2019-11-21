@@ -31,4 +31,4 @@ let someNumber = (((lastEven - firstEven) / 2) + 1)
 let final = someNumber * average
 let finalDisplay = final.toLocaleString('en')
 
-console.log("\n" + finalDisplay + ".\n")
+console.log("\n" + finalDisplay + ".")
