@@ -4,7 +4,6 @@ const MAX = Number.MAX_SAFE_INTEGER
 
 let count = 0;
 let sum = 0;
-//let number = Number(readlineSync.question("\nNon-negative integer: "));
 let number = 0;
 let average;
 
@@ -22,9 +21,7 @@ while (number >= 0) {
 
 }
 
-
 average = sum / count;
-
 
 let roundedAverage = average.toFixed(3)
 let finalDisplay = average.toLocaleString('en')
@@ -32,4 +29,4 @@ let finalDisplay = average.toLocaleString('en')
 console.log("\n" + finalDisplay + ".\n");
 
 
-/// how to ignore values not in the supported range??????
+/// mayhaps it is done
