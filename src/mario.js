@@ -22,3 +22,5 @@ while (height > 0) {
   console.log(printedLevel);
   height--;
 }
+
+console.log("")

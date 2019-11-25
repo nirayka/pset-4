@@ -23,7 +23,6 @@ while (number >= 0) {
 
 average = sum / count;
 
-let roundedAverage = average.toFixed(3)
-let finalDisplay = average.toLocaleString('en')
+let finalDisplay = average.toLocaleString('en', {minimumFractionDigits:3, maximumFractionDigits:3});
 
 console.log("\n" + finalDisplay + ".\n");

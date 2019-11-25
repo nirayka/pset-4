@@ -1,28 +1,81 @@
 const readlineSync = require("readline-sync");
-let min = 1000000000000000
-let max = 9999999999999999
-const MAX = Number.MAX_SAFE_INTEGER
-let number = Number(readlineSync.question("\nNumber: "));
+let number;
+const MAX = 9999999999999999
+const MIN = 1
+let finalDisplay;
+console.log("")
+let sumOfDoubled = 0
+let doubled;
+let firstSum = 0
+let doubledDigitSum;
+let secondSum = 0
+let otherDigits;
 
-let digit16 = number.charAt(16)
-let digit15 = number.charAt(15)
-let digit14 = number.charAt(14)
-let digit13 = number.charAt(13)
-let digit12 = number.charAt(12)
-let digit11 = number.charAt(11)
-let digit10 = number.charAt(10)
-let digit9 = number.charAt(9)
-let digit8 = number.charAt(8)
-let digit7 = number.charAt(7)
-let digit6 = number.charAt(6)
-let digit5 = number.charAt(5)
-let digit4 = number.charAt(4)
-let digit3 = number.charAt(3)
-let digit2 = number.charAt(2)
-let digit1 = number.charAt(1)
+do {
+    number = String(readlineSync.question("Number: "));
+} while (number > MAX || number < MIN || number % 1 !== 0 || Number.isNaN(number))
 
-let everyOtherProduct = (2 * digit1) + (2 * digit3) + (2 * digit5) + (2 * digit7) + (2 * digit9) + (2 * digit11) + (2 * digit13) + (2 * digit15)
-if (digit1 > )
+console.log("")
+let cardLength = Number(number.length)
 
+for (let i = cardLength - 1; i >= 0; i -= 2) {
+  doubled = Number(number.charAt(i)) * 2
+  if (doubled.length === 2) {
+    doubledDigitSum = Number(doubled.charAt(0)) + Number(doubled.charAt(1))
+  } else {
+    doubledDigitSum = doubled
+  }
+  firstSum = firstSum + doubledDigitSum
+}
+for (let i = cardLength; i >= 0; i -= 2) {
+  otherDigits = number.charAt(i)
+  secondSum = secondSum + otherDigits
+}
 
-/// literally not a clue what to do for this
+let checkSum = firstSum + secondSum
+let sumLength = Number(checkSum.length)
+
+if (checkSum.charAt(sumLength) != 0) {
+  finalDisplay = "Invalid."
+}
+else {
+  if (number.length === 13) {
+    if (number.charAt(0) == 4) {
+      finalDisplay = "Visa."
+    }
+    else {
+      finalDisplay = "Invalid."
+    }
+  }
+  else if (number.length === 15) {
+    if ((number.charAt(0) == 3) && (number.charAt(1) == 4)) {
+      finalDisplay = "Amex."
+    } else if ((number.charAt(0) == 3) && (number.charAt(1) == 7)) {
+      finalDisplay = "Amex."
+    } else {
+      finalDisplay = "Invalid."
+    }
+  }
+  else if (number.length === 16) {
+    if (number.charAt(0) == 4) {
+      finalDisplay = "Visa."
+    } else if ((number.charAt(0) == 5) && (number.charAt(1) == 1)) {
+      finalDisplay = "Mastercard."
+    } else if ((number.charAt(0) == 5) && (number.charAt(1) == 2)) {
+      finalDisplay = "Mastercard."
+    } else if ((number.charAt(0) == 5) && (number.charAt(1) == 3)) {
+      finalDisplay = "Mastercard."
+    } else if ((number.charAt(0) == 5) && (number.charAt(1) == 4)) {
+      finalDisplay = "Mastercard."
+    } else if ((number.charAt(0) == 5) && (number.charAt(1) == 5)) {
+      finalDisplay = "Mastercard."
+    } else {
+      finalDisplay = "Invalid."
+    }
+  }
+  else {
+    finalDisplay = "Invalid."
+  }
+}
+
+console.log(finalDisplay + "\n")

@@ -31,3 +31,5 @@ while (height > 0) {
   console.log(leftPyramid + " " + rightPyramid);
   height--;
 }
+
+console.log("")

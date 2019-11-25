@@ -1,32 +1,20 @@
 const readlineSync = require("readline-sync");
-let min = 0
+let number;
 const MAX = Number.MAX_SAFE_INTEGER
-let number = Number(readlineSync.question("\nPositive integer: "));
-let lastDigit;
-let reverseNumber;
+const MIN = 1
+let oddDigits = [];
+console.log("")
 
+do {
+    number = Number(readlineSync.question("Positive integer: "));
+} while (number > MAX || number < MIN || number % 1 !== 0 || Number.isNaN(number))
 
-while ((number < min) || (number > MAX) || (!(Number.isInteger(number))) || (Number.isNaN(number))) {
-  number = Number(readlineSync.question("\nPositive integer: "));
+console.log("")
+
+for (i = number; i >= 1; i = Math.floor(i / 10)) {
+  let anOddDigit = i % 10
+  oddDigits.push(anOddDigit);
 }
 
-function revNumber(number) {
-  reverseNumber = 0;
-  while (number > 0) {
-    reverseNumber = (reverseNumber * 10) + (number % 10);
-    number = Math.floor(number / 10);
-  }
-  return reverseNumber;
-}
-
-
-
-console.log("\n" + finalDisplay + ".\n")
-
-
-// UNFINISHED
-
-
-/// https://www.freecodecamp.org/news/the-complete-guide-to-loops-in-javascript-f5e242921d8c/
-
-/// euler tontiem somethign?
+let finalDisplay = oddDigits.join(", ")
+console.log(finalDisplay + ".\n")
