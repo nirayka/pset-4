@@ -15,6 +15,24 @@ console.log("\n" + finalDisplay + ".\n")
 
 
 
+
+
+for (k = 0; k <= enteredHeight; k++) {
+  rightPyramid = rightPyramid + "#";
+}
+for (m = height - 2; m < (height); m++) {
+  rightPyramid = rightPyramid + " ";
+}
+
+
+
+
+
+
+
+
+
+
 while (number > 10) {
   lastDigit = number % 10
   reverseNumber = (reverse * 10) + lastDigit

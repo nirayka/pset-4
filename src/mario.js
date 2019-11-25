@@ -1,18 +1,24 @@
 const readlineSync = require("readline-sync");
-let height = Number(readlineSync.question("\nHeight: "));
+let enteredHeight;
+console.log("")
 
-console.log("\n")
+do {
+    enteredHeight = Number(readlineSync.question("Height: "));
+} while (enteredHeight > 24 || enteredHeight < 1 || enteredHeight % 1 !== 0 || Number.isNaN(enteredHeight))
 
-for (let i = 0; i < height; i++) {
-  let pyramid = "";
-  let leftSpaces = "";
-  let counter;
+console.log("")
+let height = enteredHeight
+
+while (height > 0) {
+  let printedLevel = "";
   let k;
-  for (k = 0; k <= (2 * i + 1); k++) {
-    pyramid = pyramid + '#';
+  let i;
+  for (i = 0; i <= enteredHeight; i++) {
+    printedLevel = printedLevel + "#";
   }
-  for (let j = 1; j < (height - k); j++) {
-    leftSpaces = leftSpaces + " ";
+  for (let k = 0; k < (height); k++) {
+    printedLevel = printedLevel.replace(printedLevel.charAt(i), " ");
   }
-  console.log(leftSpaces + pyramid);
+  console.log(printedLevel);
+  height--;
 }

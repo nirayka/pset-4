@@ -27,6 +27,3 @@ let roundedAverage = average.toFixed(3)
 let finalDisplay = average.toLocaleString('en')
 
 console.log("\n" + finalDisplay + ".\n");
-
-
-/// mayhaps it is done
