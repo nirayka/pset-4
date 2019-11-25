@@ -7,7 +7,7 @@ do {
 } while (enteredHeight > 24 || enteredHeight < 1 || enteredHeight % 1 !== 0 || Number.isNaN(enteredHeight))
 
 console.log("")
-let height = enteredHeight
+let height = enteredHeight;
 
 while (height > 0) {
   let leftPyramid = "";
